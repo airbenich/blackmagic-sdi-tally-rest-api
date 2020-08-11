@@ -1,0 +1,34 @@
+BMD_SDICameraControl_I2C		KEYWORD1
+BMD_SDITallyControl_I2C			KEYWORD1
+BMD_SDICameraControl_Serial		KEYWORD1
+BMD_SDITallyControl_Serial		KEYWORD1
+BMD_Version						KEYWORD1
+
+begin							KEYWORD2
+setOutputSignalOverride			KEYWORD2
+getOutputSignalOverride			KEYWORD2
+getLibraryVersion				KEYWORD2
+getFirmwareVersion				KEYWORD2
+getProtocolVersion				KEYWORD2
+
+setOverride						KEYWORD2
+available						KEYWORD2
+availableForWrite				KEYWORD2
+write							KEYWORD2
+read							KEYWORD2
+flushWrite						KEYWORD2
+flushRead						KEYWORD2
+
+fromFixed16						KEYWORD2
+toFixed16						KEYWORD2
+writeCommandVoid				KEYWORD2
+writeCommandBool				KEYWORD2
+writeCommandInt8				KEYWORD2
+writeCommandInt16				KEYWORD2
+writeCommandInt32				KEYWORD2
+writeCommandInt64				KEYWORD2
+writeCommandUTF8				KEYWORD2
+writeCommandFixed16				KEYWORD2
+
+getCameraTally					KEYWORD2
+setCameraTally					KEYWORD2
