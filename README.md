@@ -3,4 +3,4 @@
 
 ## Control Tally Preview and Program on 4 cameras
 
-*   [http://arduino-ip.local/tally?cam=1&prg=1&pvw=1](http://arduino-ip.local/tally?cam=1&prg=1&pvw=1)
+*   [http://arduino-ip.local/tally?cam=1&pgm=1&pvw=1](http://arduino-ip.local/tally?cam=1&pgm=1&pvw=1)

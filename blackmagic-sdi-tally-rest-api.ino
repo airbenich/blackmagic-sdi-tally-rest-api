@@ -173,7 +173,7 @@ void respond(EthernetClient client)
     
     client.println(P("<h2>Control Tally Preview and Program on 4 cameras</h2>"));
     client.println(P("<ul>"));
-    client.println(P("<li><a href=\"tally?cam=1&prg=1&pvw=1\">?cam=1&prg=1&pvw=1</a></li>"));
+    client.println(P("<li><a href=\"tally?cam=1&pgm=1&pvw=1\">?cam=1&pgm=1&pvw=1</a></li>"));
     client.println(P("</ul>"));
     
     client.println(P("<p>Get full documentation at <a href=\"http://github.com/airbenich/blackmagic-sdi-tally-rest-api\">Github</a><p>"));
@@ -189,7 +189,7 @@ void respond(EthernetClient client)
     //    false                                                  // Preview Tally
     //  );
 
-    //?cam=1&prg=1&pvw=1
+    //?cam=1&pgm=1&pvw=1
     
     // send response header
     sendJsonResponseOk(client);
@@ -210,7 +210,7 @@ void respond(EthernetClient client)
     }
 
     // get program parameter
-    if(strstr(bufferArgs, P("prg=1"))) {
+    if(strstr(bufferArgs, P("pgm=1"))) {
       program = true;
     }
 
