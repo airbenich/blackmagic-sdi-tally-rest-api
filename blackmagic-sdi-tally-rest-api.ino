@@ -1,5 +1,5 @@
 #include <SPI.h>
-#include <Ethernet.h>
+#include <Ethernet2.h>
 #include <BMDSDIControl.h>
 
 BMD_SDITallyControl_I2C sdiTallyControl(0x6E);            // define the Tally object using I2C using the default shield address
@@ -13,7 +13,8 @@ char p_buffer[150];
 #define P(str) (strcpy_P(p_buffer, PSTR(str)), p_buffer)
 
 // Ethernet Interface Settings
-byte mac[] =      { 0xAD, 0xDE, 0xEF, 0xBB, 0xFD, 0xDD };
+byte mac[] =      { 0xA8, 0x61, 0x0A, 0xAE, 0x71, 0xBC };
+//IPAddress ip      (192, 168, 2, 205);  // Private static IP address
 IPAddress ip      (172, 17, 121, 64);  // Private static IP address
 //IPAddress myDns   (192, 168, 2, 1);   // DNS is not needed for this example
 //IPAddress gateway (0, 0, 0, 0);       // Default gateway disabled for security reasons
@@ -87,7 +88,7 @@ void loop()
       {
         // read and echo data received from the client
         char c = client.read();
-        Serial.print(c);
+        //Serial.print(c);
 
         // ignore \r carriage returns, we only care about \n new lines
         if (c == '\r')
@@ -139,8 +140,8 @@ void loop()
           // Response given
           state = 5; 
 
-          Serial.print(P(": "));
-          Serial.println(bufferUrl);
+          //Serial.print(P(": "));
+          //Serial.println(bufferUrl);
 
           // handle the response
           respond(client);
@@ -252,8 +253,8 @@ void respond(EthernetClient client)
 // 200 OK means the resource was located on the server and the browser (or service consumer) should expect a happy response
 void sendHttpResponseOk(EthernetClient client)
 {
-  Serial.println(P("200 OK"));
-  Serial.println();
+  //Serial.println(P("200 OK"));
+  //Serial.println();
   
   // send a standard http response header
   client.println(P("HTTP/1.1 200 OK"));
@@ -265,8 +266,8 @@ void sendHttpResponseOk(EthernetClient client)
 // 200 OK means the resource was located on the server and the browser (or service consumer) should expect a happy response
 void sendJsonResponseOk(EthernetClient client)
 {
-  Serial.println(P("200 OK"));
-  Serial.println();
+  //Serial.println(P("200 OK"));
+  //Serial.println();
   
   // send a standard http response header
   client.println(P("HTTP/1.1 200 OK"));
@@ -278,8 +279,8 @@ void sendJsonResponseOk(EthernetClient client)
 // 404 means it ain't here. quit asking.
 void sendHttp404(EthernetClient client)
 {
-  Serial.println(P("404 Not Found"));
-  Serial.println();
+  //Serial.println(P("404 Not Found"));
+  //Serial.println();
   
   client.println(P("HTTP/1.1 404 Not Found"));
   client.println(P("Content-Type: text/html"));
